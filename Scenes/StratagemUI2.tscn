@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://khlc3ldgyn0e"]
+
+[ext_resource type="Script" uid="uid://d2j0klrh7nxoh" path="res://Scripts/stratagemcontroll.gd" id="1_7b1td"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7b1td")
+
+[node name="Label_ALIGN_CENTER" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

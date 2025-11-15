@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://m6lievmysrnk"]
+
+[ext_resource type="Script" uid="uid://bmhslc5ujf4fi" path="res://Scripts/test helldiver control.gd" id="1_4j0ou"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2u1xu"]
+
+[sub_resource type="Skin" id="Skin_k84to"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lpy2x"]
+
+[node name="Diver" type="CharacterBody3D"]
+transform = Transform3D(1.00363, 0, 0, 0, 1.00363, 0, 0, 0, 1.00363, -0.00826669, 0.0105083, -0.0176055)
+script = ExtResource("1_4j0ou")
+bullet_damage = 25
+max_ammo = 7
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.996383, 0, 0, 0, 1.18817e-08, 0.996383, 0, -0.996383, 1.18817e-08, 0, 5.581, 0.353)
+current = true
+
+[node name="Skeleton3D" type="Skeleton3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Skeleton3D"]
+mesh = SubResource("CapsuleMesh_2u1xu")
+skin = SubResource("Skin_k84to")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D"]
+skeleton = NodePath("")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Skeleton3D/MeshInstance3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Skeleton3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0387593, 0.208767, -0.61994)
+size = Vector3(0.0935059, 0.10498, 1)
+
+[node name="RayCast3D" type="RayCast3D" parent="Skeleton3D/MeshInstance3D"]
+transform = Transform3D(-6.51327, 0, -4.10815e-07, -5.69392e-07, 0.0418105, 4.69905, 4.2932e-09, 5.54519, -0.0354307, 0.003896, 0.213322, -0.367766)
+
+[node name="DiversCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lpy2x")

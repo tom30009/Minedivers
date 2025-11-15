@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbri5755xdnng"]
+
+[ext_resource type="Script" uid="uid://dpb0ri3wjp6re" path="res://Scripts/physics_cube.gd" id="1_xu82m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ojgn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu82m"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_xu82m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 9
+mesh = SubResource("BoxMesh_6ojgn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xu82m")
